@@ -11,4 +11,6 @@ Press "ctrl+g", release "g", and then press "c".
 ### Windows
 Press "ctrl+g", release "g", and then press "c".
 ### OSX
-??
+Press "command+g", release "g", and then press "c". - Needs to be tested. The
+key-bindings file specifies "super" in place of command. Not sure if these are
+equivalent.
