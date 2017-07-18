@@ -26,7 +26,7 @@ class LimeStyleCommand(sublime_plugin.TextCommand):
                     mark.append(sublime.Region(offset, offset))
                 view.add_regions("LimeStyle", mark, "mark", "dot",
                     sublime.HIDDEN)
-        self.view.show_popup('Audit done. Errors (potential points off):<b>'
+        self.view.show_popup('<b>Unsaved changes NOT audited.<b><br>Audit done. Errors (potential points off):<b>'
             + str(points_off) + '<b>',
             sublime.HIDE_ON_MOUSE_MOVE, -1)
 

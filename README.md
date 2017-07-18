@@ -7,10 +7,13 @@ Yet to figure it out.
 
 ## Usage
 ### Linux
-Press "ctrl+g", release "g", and then press "c".
+Standard Checkstyle: Press "ctrl+l", release "l", and then press "s".
+JavaDoc: Press "ctrl+l", release "l", and then press "j".
 ### Windows
-Press "ctrl+g", release "g", and then press "c".
+Standard Checkstyle: Press "ctrl+l", release "l", and then press "s".
+JavaDoc: Press "ctrl+l", release "l", and then press "j".
 ### OSX
-Press "command+g", release "g", and then press "c". - Needs to be tested. The
-key-bindings file specifies "super" in place of command. Not sure if these are
-equivalent.
+Standard Checkstyle: Press "command+l", release "l", and then press "s".
+JavaDoc: Press "command+l", release "l", and then press "j".
+NOTE: The OSX keys need to be tested. The key-bindings file specifies "super" in
+the place of "command". Not sure if these are equivalent.
