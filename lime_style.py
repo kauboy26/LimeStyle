@@ -6,9 +6,14 @@ import cgi
 
 class LimeStyleCommand(sublime_plugin.TextCommand):
 
+    # This exists so that information can be shared with the EventListener.
     checkstyle_info = {}
 
     def run(self, edit, flag):
+        """
+        The main method that is called when the keyboard shortcut is triggered.
+        :param list flag: A list of flags that checkstyle-6.2.2.jar accepts.
+        """
         self.clean_views()
         open_java_views = self.get_java_view_list()
         output, points_off, *_ = self.run_checkstyle(
@@ -31,6 +36,9 @@ class LimeStyleCommand(sublime_plugin.TextCommand):
             sublime.HIDE_ON_MOUSE_MOVE, -1)
 
     def clean_views(self):
+        """
+        Removes existing marks with "LimeStyle" key from the gutter.
+        """
         print('Cleaning')
         for view in sublime.active_window().views():
             print(view.file_name())
@@ -94,6 +102,10 @@ class LimeStyleCommand(sublime_plugin.TextCommand):
 class CheckstyleDescriber(sublime_plugin.EventListener):
 
     def on_hover(self, view, point, hover_zone):
+        """
+        Called when mouse hovers.
+        Displays a popup if an error exists at that line number.
+        """
         if hover_zone == sublime.HOVER_GUTTER:
             file_name = view.file_name()
             if file_name in LimeStyleCommand.checkstyle_info:
