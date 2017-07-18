@@ -8,11 +8,11 @@ class LimeStyleCommand(sublime_plugin.TextCommand):
 
     checkstyle_info = {}
 
-    def run(self, edit):
+    def run(self, edit, flag):
         self.clean_views()
         open_java_views = self.get_java_view_list()
         output, points_off, *_ = self.run_checkstyle(
-            [view.file_name() for view in open_java_views])
+            [view.file_name() for view in open_java_views], flag)
         LimeStyleCommand.checkstyle_info = self.parse_checkstyle_output(output)
         for file in LimeStyleCommand.checkstyle_info.keys():
             view = sublime.active_window().find_open_file(file)
@@ -49,13 +49,13 @@ class LimeStyleCommand(sublime_plugin.TextCommand):
                 java_view_list.append(view)
         return java_view_list
 
-    def run_checkstyle(self, file_list):
+    def run_checkstyle(self, file_list, flag):
         """
         Method runs the checkstyle jar on the file list, and returns the unparsed
         output.
         """
         jar_path = __file__[:__file__.rfind('/') + 1] + 'checkstyle-6.2.2.jar'
-        cmd = ['java', '-jar', jar_path] + file_list
+        cmd = ['java', '-jar', jar_path] + flag + file_list
         output = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         # output.communicate() returns a tuple --> (stdout, stderr)
         # output.returncode is the number of points off
