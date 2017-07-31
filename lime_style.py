@@ -34,7 +34,6 @@ class LimeStyleCommand(sublime_plugin.TextCommand):
             view = sublime.active_window().find_open_file(file)
             if view:
                 print('file: ', file)
-                view.run_command("save")
                 mark = []
                 print(LimeStyleCommand.checkstyle_info[file].keys())
                 for line_num in LimeStyleCommand.checkstyle_info[file].keys():
@@ -42,8 +41,8 @@ class LimeStyleCommand(sublime_plugin.TextCommand):
                     mark.append(sublime.Region(offset, offset))
                 view.add_regions("LimeStyle", mark, "mark", "dot",
                     sublime.HIDDEN)
-        self.view.show_popup('<b>Unsaved changes NOT audited.<b><br>Audit done.'
-            + 'Errors (potential points off):<b>' + str(points_off) + '<b>',
+        self.view.show_popup('Audit done. Errors (potential points off):<b>'
+            + str(points_off) + '<b>',
             sublime.HIDE_ON_MOUSE_MOVE, -1)
 
     def clean_views(self):
@@ -64,6 +63,7 @@ class LimeStyleCommand(sublime_plugin.TextCommand):
         print('called')
         for view in sublime.active_window().views():
             if view.file_name() and view.file_name().endswith('.java'):
+                view.run_command("save")
                 print(view.file_name())
                 java_view_list.append(view)
         return java_view_list
