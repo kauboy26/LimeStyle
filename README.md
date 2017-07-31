@@ -1,7 +1,7 @@
 # LimeStyle
 LimeStyle is a Sublime plugin that performs GT's checkstyle on specified .java
 files. The results of the checkstyle operation are displayed in Sublime's gutter.  
-![Screen shot](LimeStyle/screen_shot.png)
+![Screen shot](https://github.com/kauboy26/LimeStyle/blob/master/screen_shot.png)
 
 ## Installation
 Yet to figure it out.
