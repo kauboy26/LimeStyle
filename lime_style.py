@@ -12,7 +12,7 @@ class LimeStyleCommand(sublime_plugin.TextCommand):
 
     def run(self, edit, flag):
         """
-        The main method that is called when the keyboard shortcut is triggered.
+        The method that is called when the keyboard shortcut is triggered.
         :param list flag: A list of flags that checkstyle-6.2.2.jar accepts.
         """
         self.view.show_popup('Running audit (this may take a while)...',
@@ -22,7 +22,8 @@ class LimeStyleCommand(sublime_plugin.TextCommand):
 
     def limestyle_run(self, flag):
         """
-        This is 
+        The main code behind LimeStyle.
+        :param list flag: a list of flags that checkstyle-6.2.2.jar accepts.
         """
         self.clean_views()
         open_java_views = self.get_java_view_list()
@@ -120,9 +121,9 @@ class CheckstyleDescriber(sublime_plugin.EventListener):
             file_name = view.file_name()
             if file_name in LimeStyleCommand.checkstyle_info:
                 line_num = view.rowcol(point)[0] + 1
-                print('line num:', line_num)
+                # print('line num:', line_num)
                 if line_num in LimeStyleCommand.checkstyle_info[file_name]:
-                    print('error linen no')
+                    # print('error linen no')
                     view.show_popup(
                         '<br>'.join([cgi.escape(frag) for frag in
                             LimeStyleCommand.checkstyle_info[file_name][line_num]]),
