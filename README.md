@@ -7,13 +7,13 @@ Yet to figure it out.
 
 ## Usage
 ### Linux
-Standard Checkstyle: Press "ctrl+l", release "l", and then press "s".
-JavaDoc: Press "ctrl+l", release "l", and then press "j".
+Standard Checkstyle: Press "ctrl+L", release "L", and then press "S".
+JavaDoc: Press "ctrl+L", release "L", and then press "J".
 ### Windows
-Standard Checkstyle: Press "ctrl+l", release "l", and then press "s".
-JavaDoc: Press "ctrl+l", release "l", and then press "j".
+Standard Checkstyle: Press "ctrl+L", release "L", and then press "S".
+JavaDoc: Press "ctrl+L", release "L", and then press "J".
 ### OSX
-Standard Checkstyle: Press "command+l", release "l", and then press "s".
-JavaDoc: Press "command+l", release "l", and then press "j".
+Standard Checkstyle: Press "command+L", release "L", and then press "S".
+JavaDoc: Press "command+L", release "L", and then press "J".
 NOTE: The OSX keys need to be tested. The key-bindings file specifies "super" in
-the place of "command". Not sure if these are equivalent.
+the place of "command". Not sure if these are equivalent
