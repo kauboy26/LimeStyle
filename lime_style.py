@@ -3,6 +3,7 @@ import sublime_plugin
 
 import subprocess
 import cgi
+from threading import Thread
 
 class LimeStyleCommand(sublime_plugin.TextCommand):
 
@@ -13,6 +14,15 @@ class LimeStyleCommand(sublime_plugin.TextCommand):
         """
         The main method that is called when the keyboard shortcut is triggered.
         :param list flag: A list of flags that checkstyle-6.2.2.jar accepts.
+        """
+        self.view.show_popup('Running audit (this may take a while)...',
+            sublime.HIDE_ON_MOUSE_MOVE, -1)
+        t = Thread(target=LimeStyleCommand.limestyle_run, args=(self, flag,))
+        t.start()
+
+    def limestyle_run(self, flag):
+        """
+        This is 
         """
         self.clean_views()
         open_java_views = self.get_java_view_list()
@@ -31,8 +41,8 @@ class LimeStyleCommand(sublime_plugin.TextCommand):
                     mark.append(sublime.Region(offset, offset))
                 view.add_regions("LimeStyle", mark, "mark", "dot",
                     sublime.HIDDEN)
-        self.view.show_popup('<b>Unsaved changes NOT audited.<b><br>Audit done. Errors (potential points off):<b>'
-            + str(points_off) + '<b>',
+        self.view.show_popup('<b>Unsaved changes NOT audited.<b><br>Audit done.'
+            + 'Errors (potential points off):<b>' + str(points_off) + '<b>',
             sublime.HIDE_ON_MOUSE_MOVE, -1)
 
     def clean_views(self):
