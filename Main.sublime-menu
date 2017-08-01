@@ -1,0 +1,29 @@
+[
+	{
+		"caption": "Tools",
+		"id": "tools",
+		"children":
+		[
+			{
+				"caption": "LimeStyle",
+				"id": "limestyle",
+				"children":
+				[
+					{
+						"caption": "Checkstyle",
+						"id": "limestyle_checkstyle",
+						"command": "lime_style",
+						"args": {"flag": []}
+					},
+					{
+						"caption": "JavaDoc",
+						"id": "limestyle_javadoc",
+						"command": "lime_style",
+						"args": {"flag": ["-j"]}
+					}
+				]
+			}
+			
+		]
+	}
+]
