@@ -35,7 +35,6 @@ class LimeStyleCommand(sublime_plugin.TextCommand):
             if view:
                 print('file: ', file)
                 mark = []
-                # print(LimeStyleCommand.checkstyle_info[file].keys())
                 for line_num in LimeStyleCommand.checkstyle_info[file].keys():
                     offset = view.text_point(line_num - 1, 0)
                     mark.append(sublime.Region(offset, offset))
@@ -121,9 +120,7 @@ class CheckstyleDescriber(sublime_plugin.EventListener):
             file_name = view.file_name()
             if file_name in LimeStyleCommand.checkstyle_info:
                 line_num = view.rowcol(point)[0] + 1
-                # print('line num:', line_num)
                 if line_num in LimeStyleCommand.checkstyle_info[file_name]:
-                    # print('error linen no')
                     view.show_popup(
                         '<br>'.join([cgi.escape(frag) for frag in
                             LimeStyleCommand.checkstyle_info[file_name][line_num]]),
