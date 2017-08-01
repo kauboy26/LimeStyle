@@ -10,9 +10,9 @@ Until then, this project (as a folder) can be downloaded and placed into "/subli
 ### Dependencies
 JAVA must be accessible from the command line. To see if it is accessible,
 run from command prompt or the terminal (on Linux and OSX):
-'''
+```
 java -version
-'''
+```
 If the version shows up, this plugin can be used.
 
 ## Usage
