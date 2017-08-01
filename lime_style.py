@@ -16,7 +16,7 @@ class LimeStyleCommand(sublime_plugin.TextCommand):
         :param list flag: A list of flags that checkstyle-6.2.2.jar accepts.
         """
         self.view.show_popup('Running audit (this may take a while)...',
-            sublime.HIDE_ON_MOUSE_MOVE, -1)
+            sublime.HIDE_ON_MOUSE_MOVE_AWAY, -1)
         t = Thread(target=LimeStyleCommand.limestyle_run, args=(self, flag,))
         t.start()
 
@@ -42,7 +42,7 @@ class LimeStyleCommand(sublime_plugin.TextCommand):
                     sublime.HIDDEN)
         self.view.show_popup('Audit done. Errors (potential points off):<b>'
             + str(points_off) + '<b>',
-            sublime.HIDE_ON_MOUSE_MOVE, -1)
+            sublime.HIDE_ON_MOUSE_MOVE_AWAY, -1)
 
     def clean_views(self):
         """
@@ -124,5 +124,5 @@ class CheckstyleDescriber(sublime_plugin.EventListener):
                     view.show_popup(
                         '<br>'.join([cgi.escape(frag) for frag in
                             LimeStyleCommand.checkstyle_info[file_name][line_num]]),
-                        sublime.HIDE_ON_MOUSE_MOVE,
+                        sublime.HIDE_ON_MOUSE_MOVE_AWAY,
                         point)
