@@ -35,7 +35,7 @@ class LimeStyleCommand(sublime_plugin.TextCommand):
             if view:
                 print('file: ', file)
                 mark = []
-                print(LimeStyleCommand.checkstyle_info[file].keys())
+                # print(LimeStyleCommand.checkstyle_info[file].keys())
                 for line_num in LimeStyleCommand.checkstyle_info[file].keys():
                     offset = view.text_point(line_num - 1, 0)
                     mark.append(sublime.Region(offset, offset))
