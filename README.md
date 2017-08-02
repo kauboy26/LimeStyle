@@ -34,3 +34,8 @@ Standard Checkstyle: Press "ctrl+L", release "L", and then press "S".
 JavaDoc: Press "ctrl+L", release "L", and then press "J".  
 NOTE: The OSX keys need to be tested. The key-bindings file specifies "ctrl" in
 the place of "command". Not sure if these are equivalent
+
+## License
+This is available under the GNU Lesser Greater Public License (see LICENSE.txt).
+The source code for the checkstyle jar used in this project can be found
+[here](https://github.com/cs1331/checkstyle).
