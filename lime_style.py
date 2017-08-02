@@ -78,7 +78,9 @@ class LimeStyleCommand(sublime_plugin.TextCommand):
             'checkstyle-6.2.2.jar')
         print('jar path', jar_path)
         cmd = ['java', '-jar', jar_path] + flag + file_list
-        output = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        print('command:', cmd)
+        output = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+            shell=platform.system() == 'Windows')
         # output.communicate() returns a tuple --> (stdout, stderr)
         # output.returncode is the number of points off
         return output.communicate(), output.returncode
