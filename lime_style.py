@@ -4,6 +4,8 @@ import sublime_plugin
 import subprocess
 import cgi
 from threading import Thread
+import os
+import platform
 
 class LimeStyleCommand(sublime_plugin.TextCommand):
 
@@ -72,7 +74,9 @@ class LimeStyleCommand(sublime_plugin.TextCommand):
         Method runs the checkstyle jar on the file list, and returns the unparsed
         output.
         """
-        jar_path = __file__[:__file__.rfind('/') + 1] + 'checkstyle-6.2.2.jar'
+        jar_path = os.path.join(os.path.abspath(os.path.dirname(__file__)),
+            'checkstyle-6.2.2.jar')
+        print('jar path', jar_path)
         cmd = ['java', '-jar', jar_path] + flag + file_list
         output = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         # output.communicate() returns a tuple --> (stdout, stderr)
@@ -94,7 +98,13 @@ class LimeStyleCommand(sublime_plugin.TextCommand):
         stdout = stdout.decode("utf-8")
         # the last two lines aren't needed.
         for line in stdout.splitlines()[:-2]:
-            file_path, line_num, *description = line.split(':')
+            tokens = line.split(':')
+            if platform.system() == 'Windows':
+                file_path = ':'.join(tokens[:2])
+                line_num = tokens[2]
+                description = tokens[3:]
+            else:
+                file_path, line_num, *description = tokens
             # The line can be of the form file_path:line_num:column_num:desc
             # or file_path:line_num:desc. column_num and desc are combined together
             # into description
