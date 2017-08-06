@@ -1,5 +1,5 @@
 # LimeStyle
-LimeStyle is a Sublime plugin that performs checkstyle.
+LimeStyle is a Sublime plugin that performs checkstyle according to CS1331's stylesheet.
 The results of the checkstyle operation are displayed in Sublime's gutter.  
 ![Screen shot](https://github.com/kauboy26/LimeStyle/blob/master/screen_shot.png)
 
