@@ -1,0 +1,4 @@
+[
+	{"caption": "Run 1331 Checkstyle", "command": "lime_style", "args": {"flag": []}},
+	{"caption": "Run 1331 Javadoc", "command": "lime_style", "args": {"flag": ["-j"]}}
+]
