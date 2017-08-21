@@ -1,4 +1,4 @@
 [
-   { "keys": ["ctrl+l", "ctrl+s"], "command": "lime_style", "args": {"flag": []}},
-   { "keys": ["ctrl+l", "ctrl+j"], "command": "lime_style", "args": {"flag": ["-j"]} }
+   { "keys": ["ctrl+shift+g"], "command": "lime_style", "args": {"flag": []}},
+   { "keys": ["ctrl+shift+q"], "command": "lime_style", "args": {"flag": ["-j"]} }
 ]
