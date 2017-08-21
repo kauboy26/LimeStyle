@@ -22,16 +22,16 @@ Alternatively, the keyboard shortcuts listed below can be used.
 files will also be *automatically saved*.
 
 ### Linux
-Standard Checkstyle: Press "ctrl+L", release "L", and then press "S".  
-JavaDoc: Press "ctrl+L", release "L", and then press "J".
+Standard Checkstyle: Press "ctrl+shift+g".  
+JavaDoc: Press "ctrl+shift+q".
 
 ### Windows
-Standard Checkstyle: Press "ctrl+L", release "L", and then press "S".  
-JavaDoc: Press "ctrl+L", release "L", and then press "J".
+Standard Checkstyle: Press "ctrl+shift+g".  
+JavaDoc: Press "ctrl+shift+q".
 
 ### OSX
-Standard Checkstyle: Press "ctrl+L", release "L", and then press "S".  
-JavaDoc: Press "ctrl+L", release "L", and then press "J".  
+Standard Checkstyle: Press "ctrl+shift+g".  
+JavaDoc: Press "ctrl+shift+q".  
 NOTE: The OSX keys need to be tested. The key-bindings file specifies "ctrl" in
 the place of "command". Not sure if these are equivalent
 
