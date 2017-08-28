@@ -1,4 +1,0 @@
-[
-   { "keys": ["ctrl+shift+g"], "command": "lime_style", "args": {"flag": []}},
-   { "keys": ["ctrl+shift+q"], "command": "lime_style", "args": {"flag": ["-j"]} }
-]
