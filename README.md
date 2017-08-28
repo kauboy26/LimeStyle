@@ -16,11 +16,11 @@ java -version
 If the version shows up, this plugin can be used.
 
 ## Usage
-LimeStyle can be run either by navigating to "Tools > LimeStyle" in the menu bar.
+LimeStyle can be run either by navigating to "Tools > LimeStyle" in the menu bar.  
 OR  
 Press "ctrl+shift+P" to open the command palette. Type in "Checkstyle 1331" or
-"Javadoc 1331" and hit <Enter>.  
-OR
+"Javadoc 1331" and hit "Enter".  
+OR  
 View the .sublime-commands file and set up keybindings according to your preferences.
 *IMPORTANT*: LimeStyle will be performed on all *open* .java files. These .java
 files will also be *automatically saved*.
