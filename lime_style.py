@@ -2,7 +2,7 @@ import sublime
 import sublime_plugin
 
 import subprocess
-import cgi
+import html
 from threading import Thread
 import os
 import platform
@@ -134,7 +134,7 @@ class CheckstyleDescriber(sublime_plugin.EventListener):
                 line_num = view.rowcol(point)[0] + 1
                 if line_num in LimeStyleCommand.checkstyle_info[file_name]:
                     view.show_popup(
-                        '<br>'.join([cgi.escape(frag) for frag in
+                        '<br>'.join([html.escape(frag, quote=False) for frag in
                             LimeStyleCommand.checkstyle_info[file_name][line_num]]),
                         sublime.HIDE_ON_MOUSE_MOVE_AWAY,
                         point)
